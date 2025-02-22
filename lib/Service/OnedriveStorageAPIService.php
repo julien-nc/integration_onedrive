@@ -284,9 +284,7 @@ class OnedriveStorageAPIService {
 			? ''
 			: ':' . $encPath . ':';
 		$endPoint = 'me/drive/root' . $reqPath . '/children';
-		$params = [
-			'filter' => 'file ne null',
-		];
+		$params = [];
 		do {
 			$result = $this->onedriveApiService->request($userId, $endPoint, $params);
 			if (isset($result['error']) || !isset($result['value']) || !is_array($result['value'])) {
